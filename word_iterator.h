@@ -9,7 +9,8 @@
 typedef struct word_iterator word_iterator;
 
 void word_iterator_init(word_iterator *, char *str, size_t length);
-/* Returns NULL when no more words are left: */
+/* Returns false when no more words are left (only use result_* output
+ * params when true is returned): */
 bool word_iterator_get_next(word_iterator *, char **result_word, size_t *result_word_length);
 
 #include "word_iterator_internals.h"
